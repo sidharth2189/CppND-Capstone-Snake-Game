@@ -4,7 +4,7 @@ This is a repository for the Capstone project in the [Udacity C++ Nanodegree Pro
 
 <img src="snake_2player.gif"/>
 
-This project extends the [Snake game](https://github.com/udacity/CppND-Capstone-Snake-Game), following the principles learnt through the Nanodegree Program.
+This project extends the [Snake game](https://github.com/udacity/CppND-Capstone-Snake-Game) for two players, following the principles learnt through the Nanodegree Program.
 
 ## Code structure
 * The Snake game code consists of four main classes: `Game`, `Snake`, `Controller`, and `Renderer`. The image below illustrates the code structure.
@@ -51,5 +51,5 @@ This work is licensed under a
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
 
 ## Rubric reference
-As per criteria in the [rubric](https://github.com/sidharth2189/CppND-Capstone-Snake-Game/blob/master/Capstone_Rubric.pdf) of the project, below is a summary of the modifications made as per specification.
+This project extends the [Snake game](https://github.com/udacity/CppND-Capstone-Snake-Game) for two players, following the principles learnt through the [Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). As per criteria in the [rubric](https://github.com/sidharth2189/CppND-Capstone-Snake-Game/blob/master/Capstone_Rubric.pdf) of the project, below is a summary of the modifications that address respective specification.
 <img src="rubric_reference.png"/>
