@@ -52,4 +52,5 @@ This work is licensed under a
 
 ## Rubric reference
 This project extends the [Snake game](https://github.com/udacity/CppND-Capstone-Snake-Game) for two players, following the principles learnt through the [Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). As per criteria in the [rubric](https://github.com/sidharth2189/CppND-Capstone-Snake-Game/blob/master/Capstone_Rubric.pdf) of the project, below is a summary of the modifications that address respective specification.
+
 <img src="rubric_reference.png"/>
