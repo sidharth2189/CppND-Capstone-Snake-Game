@@ -38,7 +38,7 @@ Renderer::~Renderer() {
   SDL_Quit();
 }
 
-void Renderer::Render(Snake const snake, SDL_Point const &food) {
+void Renderer::Render(Snake const &snake_1, Snake const &snake_2, SDL_Point const &food) {
   SDL_Rect block;
   block.w = screen_width / grid_width;
   block.h = screen_height / grid_height;
@@ -49,33 +49,52 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
 
   // Render food
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
+  std::unique_lock<std::mutex> lockFood(_mtxRenderFood);
   block.x = food.x * block.w;
   block.y = food.y * block.h;
+  lockFood.unlock();
   SDL_RenderFillRect(sdl_renderer, &block);
 
   // Render snake's body
   SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-  for (SDL_Point const &point : snake.body) {
+  std::unique_lock<std::mutex> lockSnake(_mtxRenderSnake);
+  for (SDL_Point const &point : snake_1.body) {
+    block.x = point.x * block.w;
+    block.y = point.y * block.h;
+    SDL_RenderFillRect(sdl_renderer, &block);
+  }
+  for (SDL_Point const &point : snake_2.body) {
     block.x = point.x * block.w;
     block.y = point.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
   }
 
   // Render snake's head
-  block.x = static_cast<int>(snake.head_x) * block.w;
-  block.y = static_cast<int>(snake.head_y) * block.h;
-  if (snake.alive) {
+  block.x = static_cast<int>(snake_1.head_x) * block.w;
+  block.y = static_cast<int>(snake_1.head_y) * block.h;
+  if (snake_1.alive) {
     SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
   } else {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
   }
   SDL_RenderFillRect(sdl_renderer, &block);
 
+  block.x = static_cast<int>(snake_2.head_x) * block.w;
+  block.y = static_cast<int>(snake_2.head_y) * block.h;
+  if (snake_2.alive) {
+    SDL_SetRenderDrawColor(sdl_renderer, 0x00, 0x7A, 0xCC, 0xFF);
+  } else {
+    SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0x00, 0x00, 0xFF);
+  }
+  lockSnake.unlock();
+  SDL_RenderFillRect(sdl_renderer, &block);
+
   // Update Screen
   SDL_RenderPresent(sdl_renderer);
 }
 
-void Renderer::UpdateWindowTitle(int score, int fps) {
-  std::string title{"Snake Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
+void Renderer::UpdateWindowTitle(int score_player1, int score_player2, int fps) {
+  std::string title{"Snake Score Player1 : " + std::to_string(score_player1) + " Snake Score Player2 : " \
+  + std::to_string(score_player2) + " FPS: " + std::to_string(fps)};
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }
