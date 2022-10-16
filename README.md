@@ -5,6 +5,11 @@ This is a repository for the Capstone project in the [Udacity C++ Nanodegree Pro
 <img src="snake_2player.gif"/>
 
 This project extends the [Snake game](https://github.com/udacity/CppND-Capstone-Snake-Game), following the principles learnt through the Nanodegree Program.
+
+## Code structure
+* The Snake game code consists of four main classes: Game, Snake, Controller, and Renderer. The image below illustrates the code structure.
+* The "main" creates a "Controller", a "Game", and a "Renderer" object. Game stores a Snake objects as part of the state.
+* "Main" calls Game::Run to start the game loop.
 <img src="code_structure.png"/>
 
 ## Dependencies for Running Locally
