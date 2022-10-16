@@ -7,9 +7,9 @@ This is a repository for the Capstone project in the [Udacity C++ Nanodegree Pro
 This project extends the [Snake game](https://github.com/udacity/CppND-Capstone-Snake-Game), following the principles learnt through the Nanodegree Program.
 
 ## Code structure
-* The Snake game code consists of four main classes: Game, Snake, Controller, and Renderer. The image below illustrates the code structure.
-* The "main" creates a "Controller", a "Game", and a "Renderer" object. Game stores a Snake objects as part of the state.
-* "Main" calls Game::Run to start the game loop.
+* The Snake game code consists of four main classes: `Game`, `Snake`, `Controller`, and `Renderer`. The image below illustrates the code structure.
+* The "main" creates a `Controller`, a `Game`, and a `Renderer` object. `Game` stores `Snake` objects as part of the state.
+* `Main` calls `Game::Run` to start the game loop.
 <img src="code_structure.png"/>
 
 ## Dependencies for Running Locally
@@ -21,6 +21,7 @@ This project extends the [Snake game](https://github.com/udacity/CppND-Capstone-
   * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
 * SDL2 >= 2.0
   * All installation instructions can be found [here](https://wiki.libsdl.org/Installation)
+  * [SDL Wiki](https://wiki.libsdl.org/APIByCategory)
   >Note that for Linux, an `apt` or `apt-get` installation is preferred to building from source. 
 * gcc/g++ >= 5.4
   * Linux: gcc / g++ is installed by default on most Linux distros
