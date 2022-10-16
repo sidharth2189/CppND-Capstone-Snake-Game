@@ -49,3 +49,7 @@ This work is licensed under a
 [cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
 [cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
 [cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+
+## Rubric reference
+As per criteria in the [rubric](https://github.com/sidharth2189/CppND-Capstone-Snake-Game/blob/master/Capstone_Rubric.pdf) of the project, below is a summary of the modifications made as per specification.
+<img src="rubric_reference.png"/>
